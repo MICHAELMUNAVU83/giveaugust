@@ -1324,7 +1324,9 @@
             - a Vimeo link:   https://vimeo.com/123456
           or replace the whole .video-slot button with a <video controls src="your-file.mp4"> element.
         -->
-        <div class="relative mx-auto max-w-[1000px]">
+        <div
+          class="relative mx-auto grid max-w-[1200px] gap-6 lg:grid-cols-2 lg:gap-8"
+        >
           <div
             class="absolute -left-5 -top-5 hidden h-28 w-28 rounded-[24px] bg-sun lg:block"
           ></div>
@@ -1373,11 +1375,61 @@
               >
                 <span
                   class="block font-script text-lg font-bold leading-none text-sun sm:text-xl md:text-2xl"
-                  >Give August · 3 min</span
+                  >Give August · 6 min</span
                 >
                 <span
                   class="mt-1 hidden font-heading text-xl font-extrabold leading-tight text-white sm:block md:mt-2 md:text-3xl"
                   >One month. A thousand small kindnesses.</span
+                >
+              </span>
+            </button>
+          </div>
+          <div
+            class="relative aspect-video overflow-hidden rounded-[20px] bg-ink shadow-[0_30px_80px_-30px_rgba(0,0,0,.55)] sm:rounded-[24px] md:rounded-[30px]"
+          >
+            <button
+              type="button"
+              class="video-slot group absolute inset-0 h-full w-full cursor-pointer border-0 p-0"
+              data-video="videos/give-august-2025.mp4"
+              aria-label="Play the Give August 2025 film"
+            >
+              <img
+                src="images/give-august-2025-video.jpg"
+                alt="Give August volunteer in the 2025 film"
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <span
+                class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"
+              ></span>
+              <span
+                class="absolute left-1/2 top-[42%] flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/25 ring-1 ring-white sm:top-1/2 sm:h-20 sm:w-20 md:h-24 md:w-24"
+              >
+                <span
+                  class="absolute inset-0 motion-safe:animate-ping rounded-full bg-white/20"
+                ></span>
+                <span
+                  class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand transition-colors group-hover:bg-brand group-hover:text-white sm:h-14 sm:w-14 md:h-16 md:w-16"
+                >
+                  <svg
+                    class="ml-1 h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                </span>
+              </span>
+              <span
+                class="absolute bottom-4 left-4 right-4 text-left sm:bottom-6 sm:left-6 md:bottom-8 md:left-8 md:right-8"
+              >
+                <span
+                  class="block font-script text-lg font-bold leading-none text-sun sm:text-xl md:text-2xl"
+                  >Give August 2025 · 4 min</span
+                >
+                <span
+                  class="mt-1 hidden font-heading text-xl font-extrabold leading-tight text-white sm:block md:mt-2 md:text-2xl"
+                  >A look back at where the journey began.</span
                 >
               </span>
             </button>
