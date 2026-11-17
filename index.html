@@ -16,7 +16,7 @@
       property="og:description"
       content="Giving back, bringing people together and making a difference—one community at a time."
     />
-    <meta property="og:image" content="images/web/223.jpg" />
+    <meta property="og:image" content="images/hero-children-thumbs-up.jpg" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -27,7 +27,7 @@
       name="twitter:description"
       content="Giving back, bringing people together and making a difference—one community at a time."
     />
-    <meta name="twitter:image" content="images/web/223.jpg" />
+    <meta name="twitter:image" content="images/hero-children-thumbs-up.jpg" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%231d4ed8' d='M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z'/%3E%3C/svg%3E"
@@ -85,6 +85,9 @@
         body {
           @apply font-sans text-body text-base leading-normal tracking-[.02em] sm:text-lg;
         }
+        img[src^="images/"] {
+          filter: grayscale(100%);
+        }
         h1,
         h2,
         h3 {
@@ -139,22 +142,111 @@
         .zoom-in.is-in img {
           transform: scale(1);
         }
-        .reveal-left { opacity:0; transform:translateX(-48px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
-        .reveal-right { opacity:0; transform:translateX(48px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
-        .reveal-scale { opacity:0; transform:scale(.92); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
-        .reveal-left.is-in, .reveal-right.is-in, .reveal-scale.is-in { opacity:1; transform:none; }
-        .split-words .w { display:inline-block; overflow:hidden; vertical-align:bottom; }
-        .split-words .w > span { display:inline-block; transform:translateY(110%); transition:transform .8s cubic-bezier(.2,.8,.2,1); }
-        .split-words.is-in .w > span { transform:none; }
-        .split-words.reveal { opacity:1; transform:none; }
-        .lift { transition:opacity .9s ease, transform .6s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease; will-change:transform; }
-        .lift:hover { box-shadow:0 24px 40px -18px rgba(29,78,216,.35); }
-        .btn-shine { position:relative; overflow:hidden; }
-        .btn-shine::after { content:""; position:absolute; inset:0; background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.45) 50%,transparent 70%); transform:translateX(-120%); animation:shine 4.5s ease-in-out infinite; pointer-events:none; }
-        @keyframes shine { 0%,70% { transform:translateX(-120%); } 100% { transform:translateX(120%); } }
-        @keyframes floaty { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
-        .floaty { animation:floaty 5s ease-in-out infinite; }
-        #scroll-progress { position:fixed; top:0; left:0; height:3px; width:100%; z-index:60; transform-origin:0 50%; transform:scaleX(0); background:linear-gradient(90deg,#1d4ed8,#f5b301); pointer-events:none; }
+        .reveal-left {
+          opacity: 0;
+          transform: translateX(-48px);
+          transition:
+            opacity 0.9s ease,
+            transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        .reveal-right {
+          opacity: 0;
+          transform: translateX(48px);
+          transition:
+            opacity 0.9s ease,
+            transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        .reveal-scale {
+          opacity: 0;
+          transform: scale(0.92);
+          transition:
+            opacity 0.9s ease,
+            transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+        .reveal-left.is-in,
+        .reveal-right.is-in,
+        .reveal-scale.is-in {
+          opacity: 1;
+          transform: none;
+        }
+        .split-words .w {
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: bottom;
+        }
+        .split-words .w > span {
+          display: inline-block;
+          transform: translateY(110%);
+          transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .split-words.is-in .w > span {
+          transform: none;
+        }
+        .split-words.reveal {
+          opacity: 1;
+          transform: none;
+        }
+        .lift {
+          transition:
+            opacity 0.9s ease,
+            transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+            box-shadow 0.45s ease;
+          will-change: transform;
+        }
+        .lift:hover {
+          box-shadow: 0 24px 40px -18px rgba(29, 78, 216, 0.35);
+        }
+        .btn-shine {
+          position: relative;
+          overflow: hidden;
+        }
+        .btn-shine::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            110deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.45) 50%,
+            transparent 70%
+          );
+          transform: translateX(-120%);
+          animation: shine 4.5s ease-in-out infinite;
+          pointer-events: none;
+        }
+        @keyframes shine {
+          0%,
+          70% {
+            transform: translateX(-120%);
+          }
+          100% {
+            transform: translateX(120%);
+          }
+        }
+        @keyframes floaty {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+        .floaty {
+          animation: floaty 5s ease-in-out infinite;
+        }
+        #scroll-progress {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 3px;
+          width: 100%;
+          z-index: 60;
+          transform-origin: 0 50%;
+          transform: scaleX(0);
+          background: linear-gradient(90deg, #1d4ed8, #f5b301);
+          pointer-events: none;
+        }
       }
     </style>
   </head>
@@ -554,93 +646,14 @@
             class="absolute inset-y-0 right-0 flex w-[55%] items-center justify-center overflow-hidden rounded-r-none 3xl:w-[960px]"
           >
             <div
-              class="hero-slides absolute inset-0 [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,.55)_18%,#000_42%)]"
+              class="absolute inset-0 [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,.55)_18%,#000_42%)]"
             >
               <img
-                src="images/web/221.jpg"
-                alt="Children and volunteers cheering together"
-                class="hero-slide absolute inset-0 h-full w-full object-cover opacity-100"
-                style="
-                  transition:
-                    opacity 1.6s ease,
-                    transform 6s ease-out;
-                "
+                src="images/hero-children-thumbs-up.jpg"
+                alt="Two children at a Give August community outreach event"
+                fetchpriority="high"
+                class="absolute inset-0 h-full w-full object-cover object-center"
               />
-              <img
-                src="images/web/223.jpg"
-                alt="Children grinning into the camera for a selfie"
-                loading="lazy"
-                class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0"
-                style="
-                  transition:
-                    opacity 1.6s ease,
-                    transform 6s ease-out;
-                "
-              />
-              <img
-                src="images/web/127.jpg"
-                alt="Children making peace signs with a volunteer"
-                loading="lazy"
-                class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0"
-                style="
-                  transition:
-                    opacity 1.6s ease,
-                    transform 6s ease-out;
-                "
-              />
-              <img
-                src="images/web/222.jpg"
-                alt="A crowd of children and volunteers celebrating"
-                loading="lazy"
-                class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0"
-                style="
-                  transition:
-                    opacity 1.6s ease,
-                    transform 6s ease-out;
-                "
-              />
-              <img
-                src="images/web/126.jpg"
-                alt="Children laughing with a Give August volunteer"
-                loading="lazy"
-                class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0"
-                style="
-                  transition:
-                    opacity 1.6s ease,
-                    transform 6s ease-out;
-                "
-              />
-            </div>
-            <div
-              class="absolute bottom-6 right-6 z-[2] flex gap-2"
-              role="tablist"
-              aria-label="Hero photos"
-            >
-              <button
-                type="button"
-                class="hero-dot h-2.5 rounded-full border-0 p-0 transition-all duration-300 w-8 bg-white"
-                aria-label="Show photo 1"
-              ></button>
-              <button
-                type="button"
-                class="hero-dot h-2.5 rounded-full border-0 p-0 transition-all duration-300 w-2.5 bg-white/50"
-                aria-label="Show photo 2"
-              ></button>
-              <button
-                type="button"
-                class="hero-dot h-2.5 rounded-full border-0 p-0 transition-all duration-300 w-2.5 bg-white/50"
-                aria-label="Show photo 3"
-              ></button>
-              <button
-                type="button"
-                class="hero-dot h-2.5 rounded-full border-0 p-0 transition-all duration-300 w-2.5 bg-white/50"
-                aria-label="Show photo 4"
-              ></button>
-              <button
-                type="button"
-                class="hero-dot h-2.5 rounded-full border-0 p-0 transition-all duration-300 w-2.5 bg-white/50"
-                aria-label="Show photo 5"
-              ></button>
             </div>
             <div
               class="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink via-ink/50 to-transparent"
@@ -725,33 +738,10 @@
                 class="relative aspect-[4/3] w-full overflow-hidden rounded-[20px]"
               >
                 <img
-                  src="images/web/221.jpg"
-                  alt="Children and volunteers cheering together"
-                  class="hero-slide absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-[1600ms]"
-                />
-                <img
-                  src="images/web/223.jpg"
-                  alt=""
-                  loading="lazy"
-                  class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-[1600ms]"
-                />
-                <img
-                  src="images/web/127.jpg"
-                  alt=""
-                  loading="lazy"
-                  class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-[1600ms]"
-                />
-                <img
-                  src="images/web/222.jpg"
-                  alt=""
-                  loading="lazy"
-                  class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-[1600ms]"
-                />
-                <img
-                  src="images/web/126.jpg"
-                  alt=""
-                  loading="lazy"
-                  class="hero-slide absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-[1600ms]"
+                  src="images/hero-children-thumbs-up.jpg"
+                  alt="Two children at a Give August community outreach event"
+                  fetchpriority="high"
+                  class="absolute inset-0 h-full w-full object-cover object-[center_42%]"
                 />
               </div>
             </div>
@@ -7387,53 +7377,6 @@
       })();
     </script>
     <script>
-      // Hero slideshow: crossfade + slow zoom, dots, pauses on hidden tab
-      (() => {
-        const groups = [
-          ...document.querySelectorAll(
-            ".hero-slides, #top .aspect-\\[4\\/3\\]",
-          ),
-        ].map((g) => [...g.querySelectorAll(".hero-slide")]);
-        const dots = [...document.querySelectorAll(".hero-dot")];
-        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        let i = 0,
-          timer;
-        const go = (n) => {
-          i = (n + groups[0].length) % groups[0].length;
-          groups.forEach((g) =>
-            g.forEach((img, k) => {
-              img.classList.toggle("opacity-100", k === i);
-              img.classList.toggle("opacity-0", k !== i);
-              if (!reduce)
-                img.style.transform = k === i ? "scale(1.06)" : "scale(1)";
-            }),
-          );
-          dots.forEach((d, k) => {
-            d.classList.toggle("w-8", k === i);
-            d.classList.toggle("bg-white", k === i);
-            d.classList.toggle("w-2.5", k !== i);
-            d.classList.toggle("bg-white/50", k !== i);
-            d.setAttribute("aria-selected", k === i);
-          });
-        };
-        const start = () => {
-          clearInterval(timer);
-          if (!reduce) timer = setInterval(() => go(i + 1), 5000);
-        };
-        dots.forEach((d, k) =>
-          d.addEventListener("click", () => {
-            go(k);
-            start();
-          }),
-        );
-        document.addEventListener("visibilitychange", () =>
-          document.hidden ? clearInterval(timer) : start(),
-        );
-        go(0);
-        start();
-      })();
-    </script>
-    <script>
       // Header: progress bar, shadow, sliding active pill, mobile close
       (() => {
         const h = document.getElementById("site-header"),
@@ -7487,7 +7430,11 @@
         const bar = document.createElement("div");
         bar.id = "scroll-progress";
         document.body.appendChild(bar);
-        const parallax = [...document.querySelectorAll("section .zoom-in img, #film .aspect-video img")];
+        const parallax = [
+          ...document.querySelectorAll(
+            "section .zoom-in img, #film .aspect-video img",
+          ),
+        ];
         let ticking = false;
         const onScroll = () => {
           const h = document.documentElement;
@@ -7500,14 +7447,28 @@
           });
           ticking = false;
         };
-        addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+        addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              ticking = true;
+              requestAnimationFrame(onScroll);
+            }
+          },
+          { passive: true },
+        );
         onScroll();
 
         // Word-by-word headings
         document.querySelectorAll("section h2.section-title").forEach((h) => {
           if (h.children.length) return;
           const words = h.textContent.trim().split(/\s+/);
-          h.innerHTML = words.map((w, i) => `<span class="w"><span style="transition-delay:${i * 60}ms">${w}</span></span>`).join(" ");
+          h.innerHTML = words
+            .map(
+              (w, i) =>
+                `<span class="w"><span style="transition-delay:${i * 60}ms">${w}</span></span>`,
+            )
+            .join(" ");
           h.classList.add("split-words");
         });
 
@@ -7516,25 +7477,42 @@
         document.querySelectorAll("section .grid").forEach((g) => {
           [...g.children].forEach((c, i) => {
             if (c.classList.contains("reveal")) return;
-            c.classList.add(g.children.length === 2 ? (i ? "reveal-right" : "reveal-left") : "reveal-scale");
+            c.classList.add(
+              g.children.length === 2
+                ? i
+                  ? "reveal-right"
+                  : "reveal-left"
+                : "reveal-scale",
+            );
             c.style.transitionDelay = (i % 6) * 90 + "ms";
           });
         });
-        document.querySelectorAll("section [class*='rounded-'][class*='border']").forEach((c) => c.classList.add("lift"));
+        document
+          .querySelectorAll("section [class*='rounded-'][class*='border']")
+          .forEach((c) => c.classList.add("lift"));
 
-        const io = new IntersectionObserver((es) => es.forEach((e) => {
-          if (!e.isIntersecting) return;
-          e.target.classList.add("is-in");
-          io.unobserve(e.target);
-        }), { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-        document.querySelectorAll(".reveal-left,.reveal-right,.reveal-scale,.split-words").forEach((el) => io.observe(el));
+        const io = new IntersectionObserver(
+          (es) =>
+            es.forEach((e) => {
+              if (!e.isIntersecting) return;
+              e.target.classList.add("is-in");
+              io.unobserve(e.target);
+            }),
+          { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+        );
+        document
+          .querySelectorAll(
+            ".reveal-left,.reveal-right,.reveal-scale,.split-words",
+          )
+          .forEach((el) => io.observe(el));
 
         // Tilt on hover for cards
         if (matchMedia("(hover: hover)").matches) {
           document.querySelectorAll(".lift").forEach((c) => {
             c.addEventListener("mousemove", (e) => {
               const r = c.getBoundingClientRect();
-              const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+              const x = (e.clientX - r.left) / r.width - 0.5,
+                y = (e.clientY - r.top) / r.height - 0.5;
               c.style.transform = `perspective(900px) rotateX(${(-y * 5).toFixed(2)}deg) rotateY(${(x * 5).toFixed(2)}deg) translateY(-6px)`;
             });
             c.addEventListener("mouseleave", () => (c.style.transform = ""));
@@ -7542,8 +7520,12 @@
         }
 
         // Shine on primary buttons, float on play buttons
-        document.querySelectorAll(".btn, a.bg-brand, a.bg-ink").forEach((b) => b.classList.add("btn-shine"));
-        document.querySelectorAll("#film .rounded-full").forEach((b) => b.classList.add("floaty"));
+        document
+          .querySelectorAll(".btn, a.bg-brand, a.bg-ink")
+          .forEach((b) => b.classList.add("btn-shine"));
+        document
+          .querySelectorAll("#film .rounded-full")
+          .forEach((b) => b.classList.add("floaty"));
       })();
     </script>
   </body>
